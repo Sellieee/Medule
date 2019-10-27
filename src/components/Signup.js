@@ -1,7 +1,14 @@
 import React, { Component } from "react"
 import axios from "axios"
 
-render(){
+handleSubmit(event) {
+   event.preventDefault();
+   console.log("Sign-up-form, username: ");
+   console.log(this.state.username);
+};
+
+
+render() {
    return (
       <div className="signUpForm">
          <h4>Sign Up</h4>
@@ -44,6 +51,6 @@ render(){
          </form>
       </div>
    )
-}
+};
 
 export default Signup
