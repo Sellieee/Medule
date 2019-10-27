@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
+import Axios from "axios";
 
 class Signup extends Component {
    constructor() {
@@ -23,8 +24,30 @@ class Signup extends Component {
       event.preventDefault();
       console.log("Sign-up-form, username: ");
       console.log(this.state.username);
-   };
 
+      // Axios post
+      axios.post("/", {
+         username: this.state.username,
+         password: this.state.password
+      })
+         .then(response => {
+            console.log(response);
+            if (response.data) {
+               console.log("Signup successful!");
+               this.setState({
+
+                  // Redirect to login page on successful sign-up
+                  redirectTo: "/login"
+               })
+            } else {
+               console.log("Error Signing up");
+            };
+         })
+         .catch(error => {
+            console.log("Server error when Signing up: ");
+            console.log(error);
+         });
+   };
 
    render() {
       return (
