@@ -33,8 +33,17 @@ render(){
                   />
                </div>
             </div>
-
+            <div className="form-group">
+               <div className="col-7"></div>
+               <button
+                  className="btn btn-primary col-1 col-mr-auto"
+                  onClick={this.handleSubmit}
+                  type="submit"
+               >Sign Up</button>
+            </div>
          </form>
       </div>
    )
 }
+
+export default Signup
