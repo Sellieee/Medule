@@ -21,7 +21,17 @@ render(){
                   />
                </div>
             </div>
-
+            <div className="form-group">
+               <div className="col-1 col-ml-auto">
+                  <input className="form-input"
+                     placeholder="password"
+                     type="password"
+                     name="password"
+                     value={this.state.password}
+                     onChange={this.handleChange}
+                  />
+               </div>
+            </div>
          </form>
       </div>
    )
