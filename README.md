@@ -5,6 +5,9 @@ NPM Packages used:
   - body-parser
   - express
   - morgan
+  - express-session
+  - connect-mongo
+  - passport
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
