@@ -8,6 +8,7 @@ NPM Packages used:
   - express-session
   - connect-mongo
   - passport
+  - concurrently
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
