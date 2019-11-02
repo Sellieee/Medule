@@ -20,10 +20,18 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 // Sessions
+// 1. Generates unique session id
+// 2. Savves session id as cookie and passes back to browser
+// 3. Creates empty session object
+// 4. Saves session object to database
 app.use(session({
    secret: "pikachu", // Needed to pick any word to make the hash secure
    store: new MongoStore({ mongooseConnection: dbConnection }),
+
+   // Won't resave to session store unless session has been modified
    resave: false,
+
+   // Unmodified session = false
    saveUninitialized: false
 }));
 
