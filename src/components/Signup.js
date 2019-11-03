@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from "axios"
-import Axios from "axios";
 
 class Signup extends Component {
    constructor() {
@@ -9,7 +8,7 @@ class Signup extends Component {
          username: "",
          password: "",
          confirmPassword: ""
-      }
+      };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
    };
@@ -22,30 +21,28 @@ class Signup extends Component {
 
    handleSubmit(event) {
       event.preventDefault();
-      console.log("Sign-up-form, username: ");
-      console.log(this.state.username);
+      console.log("Sign-up-form, username: " + this.state.username);
 
       // Axios post
-      axios.post("/", {
+      axios.post("/user/", {
          username: this.state.username,
          password: this.state.password
       })
          .then(response => {
             console.log(response);
-            if (response.data) {
+            if (!response.data.errormessage) {
                console.log("Signup successful!");
                this.setState({
 
                   // Redirect to login page on successful sign-up
                   redirectTo: "/login"
-               })
+               });
             } else {
-               console.log("Error Signing up");
+               console.log("Username already taken.");
             };
          })
          .catch(error => {
-            console.log("Server error when Signing up: ");
-            console.log(error);
+            console.log("Error signing up " + error);
          });
    };
 
@@ -72,10 +69,12 @@ class Signup extends Component {
                <div className="form-group">
                   <div className="col-1 col-ml-auto">
                      <label className="form-label" htmlFor="password">Password: </label>
+                  </div>
+                  <div className="col-3 col-ml-auto">
                      <input className="form-input"
-                        placeholder="password"
                         type="password"
                         name="password"
+                        placeholder="Password"
                         value={this.state.password}
                         onChange={this.handleChange}
                      />
@@ -95,4 +94,4 @@ class Signup extends Component {
    };
 };
 
-export default Signup
+export default Signup;

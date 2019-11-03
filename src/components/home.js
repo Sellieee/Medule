@@ -1,11 +1,10 @@
 // No authentication needed
-
 import React, { Component } from "react";
 
 class Home extends Component {
    constructor() {
-      super()
-   }
+      super();
+   };
 
    render() {
       return (

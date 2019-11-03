@@ -41,6 +41,7 @@ router.post("login", function (req, res, next) {
       var userInfo = {
          username: req.user.username
       };
+      res.send(userInfo);
    }
 );
 

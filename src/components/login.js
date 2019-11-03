@@ -9,7 +9,7 @@ class LoginForm extends Component {
          username: "",
          password: "",
          RedirectTo: null
-      }
+      };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
    };
@@ -19,7 +19,7 @@ class LoginForm extends Component {
       this.setState({
          [event.target.name]: event.target.value
       });
-   }
+   };
 
    handleSubmit(event) {
       event.preventDefault();
@@ -76,10 +76,9 @@ class LoginForm extends Component {
                      </div>
                      <div className="col-3 col-mr-auto">
                         <input className="form-input"
-                           type="text"
-                           id="password"
+                           type="password"
                            name="password"
-                           placeholder="password"
+                           placeholder="Password"
                            value={this.state.password}
                            onChange={this.handleChange}
                         />
