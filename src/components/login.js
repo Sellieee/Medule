@@ -98,4 +98,4 @@ class LoginForm extends Component {
    };
 };
 
-export default Login;
+export default LoginForm;
