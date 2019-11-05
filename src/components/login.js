@@ -8,7 +8,7 @@ class LoginForm extends Component {
       this.state = {
          username: "",
          password: "",
-         RedirectTo: null
+         redirectTo: null
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
@@ -38,7 +38,7 @@ class LoginForm extends Component {
                   username: response.data.username
                });
                this.setState({
-                  RedirectTo: "/"
+                  redirectTo: "/"
                });
             };
          })
@@ -48,8 +48,8 @@ class LoginForm extends Component {
    };
 
    render() {
-      if (this.state.RedirectTo) {
-         return <Redirect to={{ pathname: this.state.RedirectTo }} />
+      if (this.state.redirectTo) {
+         return <Redirect to={{ pathname: this.state.redirectTo }} />
       } else {
          return (
             <div>
@@ -71,7 +71,7 @@ class LoginForm extends Component {
                      </div>
                   </div>
                   <div className="form-group">
-                     <div className="col -1 col-ml-auto">
+                     <div className="col-1 col-ml-auto">
                         <label className="form-label" htmlFor="password">Password</label>
                      </div>
                      <div className="col-3 col-mr-auto">

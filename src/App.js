@@ -23,6 +23,10 @@ class App extends Component {
     this.getUser();
   };
 
+  updateUser(userObject) {
+    this.setState(userObject);
+  };
+
   getUser() {
     axios.get("/user/").then(response => {
       console.log("Get user response: " + response.data);
@@ -61,7 +65,7 @@ class App extends Component {
 
         {/* Signup page */}
         <Route path="/signup"
-          render {() =>
+          render={() =>
             <Signup />}
         />
 
