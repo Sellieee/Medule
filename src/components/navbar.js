@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
+import logo from "../logo.svg";
 import "../App.css";
 import axios from "axios";
 
@@ -45,9 +46,9 @@ class Navbar extends Component {
                         <section className="navbar-section">
                            <Link to="/" className="btn btn-link text-secondary">
                               <span className="text-secondary">Home</span>
-                           </Link>
-                           <Link to="/login" className="btn btn-link text-secondary">
-                              <span className="text-secondary">Login</span>
+                              <Link to="/login" className="btn btn-link text-secondary">
+                                 <span className="text-secondary">Login</span>
+                              </Link>
                            </Link>
                            <Link to="/signup" className="btn btn-link text-secondary">
                               <span className="text-secondary">Sign up</span>
@@ -57,7 +58,7 @@ class Navbar extends Component {
                </div>
                <div className="col-4 col-mr-auto">
                   <div id="top-filler"></div>
-                  {/* <img src={logo} className="App-logo" alt="logo" /> */}
+                  <img src={logo} className="App-logo" alt="logo" />
                </div>
             </header>
          </div >
