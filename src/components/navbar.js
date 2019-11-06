@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
-import logo from "../logo.svg";
 import "../App.css";
 import axios from "axios";
 
@@ -35,34 +34,28 @@ class Navbar extends Component {
       return (
          <div>
             <header className="navbar App-header" id="nav-container">
-               <div className="col-4">
-                  {loggedIn ? (
-                     < section className="navbar-section">
-                        <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                           <span className="text-secondary">Logout</span>
-                        </Link>
-                     </section>
-                  ) : (
-                        <section className="navbar-section">
-                           <Link to="/" className="btn btn-link text-secondary">
-                              <span className="text-secondary">Home</span>
-                              <Link to="/login" className="btn btn-link text-secondary">
-                                 <span className="text-secondary">Login</span>
-                              </Link>
-                           </Link>
-                           <Link to="/signup" className="btn btn-link text-secondary">
-                              <span className="text-secondary">Sign up</span>
-                           </Link>
-                        </section>
-                     )}
-               </div>
-               <div className="col-4 col-mr-auto">
-                  <div id="top-filler"></div>
-                  <img src={logo} className="App-logo" alt="logo" />
-               </div>
+               <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+                  <Navbar.Link to="/">Medule</Navbar.Link>
+                  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                  <Navbar.Collapse id="responsive-navbar-nav">
+                     <Nav className="mr-auto">
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/signup">Sign Up</Nav.Link>
+                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                           <NavDropdown.Item href="#action/3.1">My Forms</NavDropdown.Item>
+                           <NavDropdown.Item href="#action/3.2">Something</NavDropdown.Item>
+                           <NavDropdown.Divider />
+                           <NavDropdown.Item href="#action/3.3">My Doctors</NavDropdown.Item>
+                        </NavDropdown>
+                     </Nav>
+                     <Nav>
+                        <Nav.Link href="#" onClick={this.logout}>Logout</Nav.Link>
+                     </Nav>
+                  </Navbar.Collapse>
+               </Navbar>
             </header>
-         </div >
-      );
+         </div>
+      )
    };
 };
 

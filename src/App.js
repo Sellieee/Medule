@@ -5,6 +5,8 @@ import Signup from "./components/Signup";
 import LoginForm from "./components/login";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends Component {
   constructor() {
