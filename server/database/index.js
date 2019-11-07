@@ -1,5 +1,5 @@
 // Connect to Mongo database
-const mongoose = require("mmongoose");
+const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 // Connect to medule-login Mongo database

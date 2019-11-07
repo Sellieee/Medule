@@ -1,14 +1,13 @@
 // No authentication needed
-import React, { Component } from "react";
+import React from "react";
+import Navbar from "./navbar";
 
-class Home extends Component {
-   constructor() {
-      super();
-   };
+class Home {
 
    render() {
       return (
          <div>
+            <Navbar />
             <p>Home page</p>
          </div>
       )

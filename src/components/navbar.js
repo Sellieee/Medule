@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import { Route, Link } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
+// import { Route, Link } from "react-router-dom";
 import "../App.css";
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import axios from "axios";
 
 class Navbar extends Component {
@@ -28,8 +30,8 @@ class Navbar extends Component {
    };
 
    render() {
-      const loggedIn = this.props.loggedIn;
-      console.log("Navbar render, props: " + this.props);
+      // const loggedIn = this.props.loggedIn;
+      // console.log("Navbar render, props: " + this.props);
 
       return (
          <div>
