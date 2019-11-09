@@ -52,7 +52,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <Navbar updateUser={this.updateUser} />
+        {/* loggedIn={this.state.loggedIn} */}
         {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
 
         {/* Home page */}
