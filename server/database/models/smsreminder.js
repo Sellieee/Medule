@@ -31,4 +31,37 @@ SmsreminderSchema.statics.sendNotifications = function (callback) {
    });
 
    @param { array } appointments;
-}
+
+   function sendNotifications(appointments) {
+      const client = new Twilio(config.twilioAccountSid, config.twilioAuthToken);
+      appointments.forEach(function (appointment) {
+
+         // Create options to send the message
+         const options = {
+            to: `+ ${appointment.phoneNumber}`,
+            from: config.twilioPhoneNumber,
+            body: `Hi ${appointment.name}. Just a reminder that you have a doctor's appointment coming up.`,
+         };
+
+         // Send the message
+         client.messages.create(options, function (error, response) {
+            if (error) {
+               console.log(error);
+            } else {
+               // Log the last few digits of a phone number
+               let masked = appointment.phoneNumber.substr(0, appointment.phoneNumber.length - 5);
+               masked += "*****";
+               console.log(`Message sent to ${masked}.`);
+            };
+         });
+      });
+
+      // Indicate all messages queued for delivery
+      if (callback) {
+         callback.call();
+      };
+   };
+};
+
+const Smsreminder = mongoose.model("smsreminder", SmsreminderSchema);
+module.exports = Smsreminder;
