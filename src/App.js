@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
+import Map from "./components/map"
 // import { Route } from "react-router-dom";
 // import Signup from "./components/Signup";
 // import LoginForm from "./components/login";
