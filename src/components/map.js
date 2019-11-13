@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchBar from "material-ui-search-bar";
+// import SearchBar from "material-ui-search-bar";
 import Script from "react-load-script";
 
 class Map extends Component {
@@ -12,7 +12,9 @@ class Map extends Component {
    }
 
    handleScriptLoad() {
-      var options = { types: [`(cities)`] };
+      var options = { types: ["(cities)"] };
+
+      /*global google*/
       this.autocomplete = new google.maps.places.Autocomplete(
          document.getElementById("autocomplete"),
          options);
@@ -39,10 +41,10 @@ class Map extends Component {
    render() {
       return (
          <div>
-            <Script url="https://maps.googleapis.com/maps/api/place/textsearch/xml?query=general+practitioners+in+Sydney&key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
+            <Script url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY&libraries=places"
                onLoad={this.handleScriptLoad}
             />
-            <SearchBar id="autocomplete" placeholder="Search for a Location Here" hintText="Search Location" value={this.state.query}
+            <input id="autocomplete" placeholder="Search for a Location Here" value={this.state.query}
                style={{
                   margin: "0 auto",
                   maxWidth: 800,
