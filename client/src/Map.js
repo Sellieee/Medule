@@ -1,7 +1,8 @@
 
 import React, { Component } from "react";
-import { GoogleMapReact, Marker } from "google-map-react";
-import Markers from "./places.json";
+import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
+import items from "./places.json";
+//const fs = require("fs")
 
 const AnyReactComponent = ({ text }) => (
     <div style={{
@@ -19,51 +20,47 @@ const AnyReactComponent = ({ text }) => (
     </div>
 );
 
-export default class SimpleMapPage extends Component {
-    static defaultProps = {
+class SimpleMapPage extends Component {
+    defaultProps = {
         center: { lat: -37.88, lng: 145.018 },
         zoom: 14
     };
 
     state = {
-        markers: Markers
+        markers: items
     }
 
     render() {
         return (
             <div style={{ width: "100%", height: "400px" }}>
-                <GoogleMapReact
+                <GoogleMap
                     bootstrapURLKeys={{ key: this.props.apiKey }}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                    defaultCenter={{ lat: -37.88, lng: 145.018 }}
+                    defaultZoom={14}
                 >
-                    {this.state.markers.map((Markers, i) => {
-                        let lat = parseFloat(this.state.markers.latitude, 10);
-                        let lng = parseFloat(this.state.markers.longitude, 10);
-
+                    {this.state.markers.map((item, i) => {
+                        console.log('******', item)
+                        let lat = parseFloat(item.latitude, 10);
+                        let lng = parseFloat(item.longitude, 10);
+                        // eslint-disable-next-line no-unreachable
                         return (
                             <Marker
-                                id={this.state.markers.id}
-                                key={this.state.markers.id}
+                                id={item.id}
+                                key={item.id}
                                 position={{ lat: lat, lng: lng }}
                                 title="Click to zoom"
-                                onClick={this.state.onToggleOpen.bind(this, i)}
+                                onClick={() => console.log('*****')}
                             >
-                                {this.state.infoWindows[i].isOpen && (
-                                    <InfoWindow onCloseClick={this.state.onToggleOpen.bind(i)}>
-                                        <div>{this.state.markers.name}</div>
-                                    </InfoWindow>
-                                )}
+                                <InfoWindow onCloseClick={item.onToggleOpen.bind(i)}>
+                                    <div>{item.name}</div>
+                                </InfoWindow>
                             </Marker>
+                        )
                     })}
-                    <AnyReactComponent
-                        lat={-37.8840171}
-                        lng={145.0178017}
-                        text={"Caulfield"}
-                    />
-                </GoogleMapReact>
-            </div>
+                </GoogleMap>
+            </div >
         );
     }
 }
 
+export default withScriptjs(withGoogleMap(SimpleMapPage))

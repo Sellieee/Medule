@@ -12,6 +12,14 @@ function App() {
         apiKey={API_KEY}
       />
       <Map
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `400px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+        center={{ lat: -24.9923319, lng: 135.2252427 }}
+        zoom={4}
+
+
         apiKey={API_KEY}
       />
       <div></div>
