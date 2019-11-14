@@ -1,58 +1,60 @@
-import React, { Component } from "react";
-// import SearchBar from "material-ui-search-bar";
-import Script from "react-load-script";
 
-class Map extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         city: "",
-         query: "",
-      };
-   }
+import React, { Component } from 'react';
+// import SearchBar from 'material-ui-search-bar';
+import GoogleMapReact from 'google-map-react';
+const dotenv = require('dotenv');
+const env = dotenv.config().parsed;
 
-   handleScriptLoad() {
-      var options = { types: ["(cities)"] };
+const AnyReactComponent = ({ text }) => (
+   <div style={{
+      color: 'white',
+      background: 'grey',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '100%',
+      transform: 'translate(-50%, -50%)'
+   }}>
+      {text}
+   </div>
+);
 
-      /*global google*/
-      this.autocomplete = new google.maps.places.Autocomplete(
-         document.getElementById("autocomplete"),
-         options);
+export default class Map extends Component {
 
-      this.autocomplete.setFields(["address_components",
-         "formatted_address"]);
-
-      this.autocomplete.addListener("place_changed",
-         this.handlePlaceSelect);
+   static defaultProps = {
+      center: { lat: 59.95, lng: 30.33 },
+      zoom: 11
    };
 
-   handlePlaceSelect = () => {
-      const addressObject = this.autocomplete.getPlace();
-      const address = addressObject.address_components;
-
-      if (address) {
-         this.setState({
-            city: address[0].long_name,
-            query: addressObject.formatted_address,
-         });
-      };
-   };
+   // state = {
+   //    city: '',
+   //    query: ''
+   // };
 
    render() {
       return (
-         <div>
-            <Script url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY&libraries=places"
-               onLoad={this.handleScriptLoad}
-            />
-            <input id="autocomplete" placeholder="Search for a Location Here" value={this.state.query}
+         <div style={{ width: '100%', height: '400px' }}>
+            {/* <SearchBar id="autocomplete" placeholder="" hintText="Search City" value={this.state.query}
                style={{
-                  margin: "0 auto",
+                  margin: '0 auto',
                   maxWidth: 800,
                }}
-            />
+            /> */}
+            <GoogleMapReact
+               bootstrapURLKeys={{ key: this.props.AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY }}
+               defaultCenter={this.props.center}
+               defaultZoom={this.props.zoom}
+            >
+               <AnyReactComponent
+                  lat={59.955413}
+                  lng={30.337844}
+                  text={'Kreyser Avrora'}
+               />
+            </GoogleMapReact>
          </div>
       );
-   };
-};
+   }
+}
 
-export default Map;
