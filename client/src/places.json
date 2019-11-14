@@ -1,0 +1,62 @@
+[
+   {
+      "id": 1,
+      "name": "Cabrini General Practice",
+      "latitude": " -37.888136",
+      "longitude": "145.032693"
+   },
+   {
+      "id": 2,
+      "name": "Dr Arnold Carolyn",
+      "latitude": "-37.883397",
+      "longitude": "145.015973"
+   },
+   {
+      "id": 3,
+      "name": "Dr Louise Johns",
+      "latitude": "-37.883596",
+      "longitude": "145.014924"
+   },
+   {
+      "id": 4,
+      "name": "Caulfield Family Medical Practice",
+      "latitude": "-37.878147",
+      "longitude": "145.011247"
+   },
+   {
+      "id": 5,
+      "name": "Dr Alexander Vainer",
+      "latitude": "-37.873801",
+      "longitude": "145.024747"
+   },
+   {
+      "id": 6,
+      "name": "Dr Joshua Grokop",
+      "latitude": "-37.862091",
+      "longitude": "145.010295"
+   },
+   {
+      "id": 7,
+      "name": "Wilk Street Medical Practice",
+      "latitude": "-37.862893",
+      "longitude": "145.014146"
+   },
+   {
+      "id": 8,
+      "name": "Caulfield Park Clinic",
+      "latitude": "-37.8735198",
+      "longitude": "145.0225092"
+   },
+   {
+      "id": 9,
+      "name": "Elsternwick Medical Centre",
+      "latitude": "-37.88071",
+      "longitude": "145.0189236"
+   },
+   {
+      "id": 10,
+      "name": "South Caulfield Family Medical Clinic",
+      "latitude": "-37.887841",
+      "longitude": "145.0148517"
+   }
+]
