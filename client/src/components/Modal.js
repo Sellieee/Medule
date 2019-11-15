@@ -3,13 +3,13 @@
 // class Modal extends Component {
 //    constructor(props) {
 //       super(props);
-//       this.state
+//       this.state = {
+//          show: false
+//       }
 //    }
 // }
 
-// const createModal = ({ handleClose, show, children }) => {
-//    const showHideClassName = show ? "modal display-block" : "modal display-none";
-
+// render() {
 //    return (
 //       <div className={showHideClassName}>
 //          <section className="doctor-modal">
@@ -18,6 +18,11 @@
 //          </section>
 //       </div>
 //    )
+// }
+// const createModal = ({ handleClose, show, children }) => {
+//    const showHideClassName = show ? "modal display-block" : "modal display-none";
+
+
 // }
 
 // export default Modal;

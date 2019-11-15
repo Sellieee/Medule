@@ -20,3 +20,12 @@
 .App-link {
   color: #09d3ac;
 }
+
+#nav-container {
+  align-items: flex-end;
+}
+
+.navbar {
+  margin-top: auto;
+  height: 60px;
+}

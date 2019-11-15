@@ -56,7 +56,7 @@ class SimpleMapPage extends Component {
                                 key={item.id}
                                 position={{ lat: lat, lng: lng }}
                                 title={item.name}
-                                onClick={() => this.showDoctorModal}
+                                onClick={() => this.props.openModal(item)}
                             >
                                 {this.state.position &&
                                     <InfoWindow position={this.state.position}>
