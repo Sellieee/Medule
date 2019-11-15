@@ -5,7 +5,12 @@ import Map from "./components/Map";
 import AppointmentApp from "./components/AppointmentApp";
 import Navbar from "./components/Navbar";
 import Modal from "react-modal";
-import { tsConstructorType } from "@babel/types";
+import axios from "axios";
+import { Route } from "react-router-dom";
+import Signup from "./components/Signup";
+import LoginForm from "./components/LoginForm";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const customStyles = {
   content: {
@@ -27,12 +32,20 @@ class App extends Component {
     super();
     this.state = {
       modalIsOpen: false,
-      modalData: ''
+      modalData: '',
+      loggedIn: false,
+      username: null
     };
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.getUser = this.getUser.bind(this);
+    this.updateUser = this.updateUser.bind(this);
+  }
+
+  componentDidMount() {
+    // this.getUser();
   }
 
   openModal(data) {
@@ -47,9 +60,50 @@ class App extends Component {
     this.setState({ modalIsOpen: false, modalData: "" });
   }
 
+
+  updateUser(userObject) {
+    this.setState(userObject);
+  };
+
+  getUser() {
+    axios.get("/user/").then(response => {
+      console.log("Get user response: " + response.data);
+      if (response.data.user) {
+        console.log("Get user: There is a user saved in the server session: " + response.data.user);
+        this.setState({
+          loggedIn: true,
+          username: response.data.user.username
+        });
+      }
+      else {
+        console.log("Get user: no user found");
+        this.setState({
+          loggedIn: false,
+          username: null
+        });
+      };
+    });
+  };
+
   render() {
     return (
       <div className="App" >
+        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn}
+        />
+        {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
+
+        {/* Login page */}
+        <Route path="/login"
+          render={() =>
+            <LoginForm updateUser={this.updateUser} />}
+        />
+
+        {/* Signup page */}
+        <Route path="/signup"
+          render={() =>
+            <Signup />}
+        />
+
         <div>
           <button onClick={this.openModal}>Open Modal</button>
           <Modal
@@ -66,7 +120,6 @@ class App extends Component {
 
           </Modal>
         </div>
-        <Navbar />
         <Search
           apiKey={API_KEY}
         />

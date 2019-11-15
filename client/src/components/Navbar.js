@@ -35,7 +35,7 @@ class Navbar extends Component {
       return (
          <div>
 
-            <header className="navbar App-header" id="nav-container">
+            <header className="navbar" id="nav-container">
                <div className="col-4" >
                   {loggedIn ? (
                      <section className="navbar-section">
