@@ -2,13 +2,15 @@ import React from "react";
 import "./App.css";
 import Search from "./components/Search";
 import Map from "./components/Map";
-import AppointmentApp from "./components/appointmentApp";
+import AppointmentApp from "./components/AppointmentApp";
+import Navbar from "./components/Navbar";
 
 const API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Search
         apiKey={API_KEY}
       />
