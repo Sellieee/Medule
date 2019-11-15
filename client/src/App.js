@@ -17,9 +17,7 @@ function App() {
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         center={{ lat: -24.9923319, lng: 135.2252427 }}
-        zoom={4}
-
-
+        zoom={11}
         apiKey={API_KEY}
       />
       <div></div>
