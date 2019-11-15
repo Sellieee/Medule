@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
-import item from "./places.json";
+import item from "../places.json";
+import Modal from "./Modal";
 
 // const AnyReactComponent = ({ text }) => (
 //     <div style={{
@@ -26,15 +27,15 @@ class SimpleMapPage extends Component {
 
     state = {
         item: item,
+        modal: Modal
     }
 
-    handleToggleOpen(item) {
-        this.setState({
-            position: {
-                lat: item.latitude,
-                lng: item.longitude
-            }
-        })
+    showDoctorModal = () => {
+        this.setState({ show: true });
+    }
+
+    hideDoctorModal = () => {
+        this.setState({ show: false });
     }
 
     render() {
@@ -55,7 +56,7 @@ class SimpleMapPage extends Component {
                                 key={item.id}
                                 position={{ lat: lat, lng: lng }}
                                 title={item.name}
-                                onClick={() => this.handleToggleOpen(item)}
+                                onClick={() => this.showDoctorModal}
                             >
                                 {this.state.position &&
                                     <InfoWindow position={this.state.position}>
