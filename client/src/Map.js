@@ -1,23 +1,22 @@
-
 import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
 import item from "./places.json";
 
-const AnyReactComponent = ({ text }) => (
-    <div style={{
-        color: "white",
-        background: "grey",
-        padding: "15px 10px",
-        display: "inline-flex",
-        textAlign: "center",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: "100%",
-        transform: "translate(-50%, -50%)"
-    }}>
-        {text}
-    </div>
-);
+// const AnyReactComponent = ({ text }) => (
+//     <div style={{
+//         color: "white",
+//         background: "grey",
+//         padding: "15px 10px",
+//         display: "inline-flex",
+//         textAlign: "center",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         borderRadius: "100%",
+//         transform: "translate(-50%, -50%)"
+//     }}>
+//         {text}
+//     </div>
+// );
 
 class SimpleMapPage extends Component {
     defaultProps = {
@@ -27,14 +26,15 @@ class SimpleMapPage extends Component {
 
     state = {
         item: item,
-        handleToggleOpen(item) {
-            this.setState({
-                position: {
-                    lat: item.latitude,
-                    lng: item.longitude
-                }
-            })
-        },
+    }
+
+    handleToggleOpen(item) {
+        this.setState({
+            position: {
+                lat: item.latitude,
+                lng: item.longitude
+            }
+        })
     }
 
     render() {
@@ -59,7 +59,7 @@ class SimpleMapPage extends Component {
                             >
                                 {this.state.position &&
                                     <InfoWindow position={this.state.position}>
-                                        <h1>{this.props.location.venue.name}</h1>
+                                        <h1>{item.name}</h1>
                                     </InfoWindow>
                                 }
                             </Marker>

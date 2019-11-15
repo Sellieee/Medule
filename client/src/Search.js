@@ -1,6 +1,6 @@
 // Imports
 import React, { Component } from "react";
-import Map from "./Map"
+import SimpleMapPage from "./Map"
 
 // Import React Scrit Libraray to load Google object
 import Script from "react-load-script";

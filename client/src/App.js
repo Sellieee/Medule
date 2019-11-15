@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Search from "./Search";
 import Map from "./Map";
+import AppointmentApp from "./components/appointmentApp";
 
 const API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
 
@@ -21,6 +22,7 @@ function App() {
         apiKey={API_KEY}
       />
       <div></div>
+      <AppointmentApp />
     </div>
   );
 }
