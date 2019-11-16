@@ -8,18 +8,21 @@ import Modal from "react-modal";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 import Signup from "./components/Signup";
+import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import GoogleFontLoader from "react-google-font-loader";
+
 
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
   }
 };
 
@@ -32,7 +35,7 @@ class App extends Component {
     super();
     this.state = {
       modalIsOpen: false,
-      modalData: '',
+      modalData: "",
       loggedIn: false,
       username: null
     };
@@ -53,7 +56,7 @@ class App extends Component {
   }
 
   afterOpenModal() {
-    this.subtitle.style.color = '#f00';
+    this.subtitle.style.color = "#f00";
   }
 
   closeModal() {
@@ -94,6 +97,8 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
 
+        <Home />
+
         <Route path="/login"
           render={() =>
             <LoginForm updateUser={this.updateUser} />}
@@ -109,9 +114,7 @@ class App extends Component {
             <Calendar />}
         />}
 
-
-
-        <button onClick={this.openModal}>Open Modal</button>
+        {/* <button onClick={this.openModal}>Open Modal</button> */}
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -119,11 +122,19 @@ class App extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <Link to="/calendar">Go to Calendar</Link>
-          <div>{this.state.modalData.name}</div>
-        </Modal>
+          <h2 ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
+          <br>
+          </br>
+          <div>
+            <p>{this.state.modalData.name}</p>
+            <p>{this.state.modalData.address}</p>
+            <p>{this.state.modalData.phone}</p>
+            <p>{this.state.modalData.openinghours}</p>
+          </div>
+          <Link to="/calendar"><button>{this.state.modalData.practitioner}</button></Link>
+          {/* <Link to="/calendar">Go to Calendar</Link> */}
+          <button onClick={this.closeModal}>Close</button>
+        </Modal >
 
 
         {
@@ -144,7 +155,7 @@ class App extends Component {
         }
 
         {/* <AppointmentApp /> */}
-      </div>
+      </div >
     );
   }
 }

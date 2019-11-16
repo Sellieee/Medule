@@ -31,7 +31,20 @@
 
 .navbar {
   margin-top: auto;
-  height: 60px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}
+
+.navbar .btn {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 30px;
+}
+
+.navbar .name {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 50px;
+  font-weight: bold
 }
 
 #top-filler {
@@ -40,6 +53,22 @@
 
 #nav-container {
   align-items: flex-end;
+}
+
+.aboutMeduleText {
+  padding: 10% 10% 2% 10%;
+  font-size: 200%;
+}
+
+.meduleSlogan{
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.App {
+  /* background-image: url("./background.gif"); */
+  background-size: % 100%;
 }
 
 @keyframes App-logo-spin {

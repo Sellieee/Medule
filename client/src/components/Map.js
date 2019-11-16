@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
 import item from "../places.json";
-
 class SimpleMapPage extends Component {
     defaultProps = {
         center: { lat: -37.88, lng: 145.018 },
