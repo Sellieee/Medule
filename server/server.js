@@ -42,7 +42,6 @@ const user = require("./routes/user");
 app.use("/user", user);
 
 
-
 // Start the server
 app.listen(PORT, () => {
    console.log(`App listening on port: ${PORT}`)

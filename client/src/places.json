@@ -2,63 +2,110 @@
    {
       "id": 1,
       "name": "Cabrini General Practice",
-      "description": "",
+      "description": "We are committed to providing comprehensive general practice medical care and support to all of our patients and their families.",
+      "phone": "(03) 9571 9933",
+      "practitioner": "Dr Melinda Lun",
       "address": "992 Glen Huntly Rd, Caulfield South VIC 3162",
-      "openinghours": "Monday to Friday 8.30am to 6pm, Saturday 8.30am to 11am, Closed Sundays",
+      "openinghours": "Monday to Friday 8.30am to 6pm, Saturday 8.30am to 11am, Closed on Sunday",
       "latitude": " -37.888136",
       "longitude": "145.032693"
    },
    {
       "id": 2,
-      "name": "Dr Arnold Carolyn",
+      "name": "Dr Carolyn Arnold",
+      "description": "Private Practice.",
+      "practitioner": "Dr Carolyn Arnold",
+      "address": "260 Kooyong Rd, Caulfield VIC 3162",
+      "phone": "(03) 9076 6834",
+      "openinghours": "Monday to Friday 8.30am to 6pm, Closed on Saturday and Sunday",
       "latitude": "-37.883397",
       "longitude": "145.015973"
    },
    {
       "id": 3,
       "name": "Dr Louise Johns",
+      "description": "Private Practice.",
+      "practitioner": "Dr Louise Johns",
+      "address": "88 Asling St, Brighton VIC 3186",
+      "phone": "(03) 9596 3501",
+      "openinghours": "Monday to Friday 8.30am to 6pm, Closed on Saturday and Sunday",
       "latitude": "-37.883596",
       "longitude": "145.014924"
    },
    {
       "id": 4,
       "name": "Caulfield Family Medical Practice",
+      "description": "The Practice is staffed by highly experienced male and female doctors, allied health practitioners and excellent administration staff all of whom endeavour to offer the highest standard of medical care in order to meet your individual needs.",
+      "practitioner": "Dr Jonathan Cohen",
+      "address": "263 Glen Eira Rd, Caulfield North VIC 3161",
+      "phone": "(03) 9528 1910",
+      "openinghours": "Monday to Friday 9.30am to 6.30pm, Closed on Saturday and Sunday",
       "latitude": "-37.878147",
       "longitude": "145.011247"
    },
    {
       "id": 5,
       "name": "Dr Alexander Vainer",
+      "description": "Private Practice.",
+      "practitioner": "Dr Alexander Vainer",
+      "address": "2/115 Hawthorn Rd, Caulfield North VIC 3161",
+      "phone": "(03) 9523 6111",
+      "openinghours": "Monday to Friday 9am to 5pm, Saturday 9.30am to 12pm, Closed on Sunday",
       "latitude": "-37.873801",
       "longitude": "145.024747"
    },
    {
       "id": 6,
       "name": "Dr Joshua Grokop",
+      "description": "Private Practice.",
+      "practitioner": "Dr Joshua Grokop",
+      "address": "352 Orrong Rd, Caulfield North VIC 3161",
+      "phone": "(03) 9527 2985",
+      "openinghours": "Monday to Friday 8am to 7pm, Saturday 9am to 1pm, Closed on Sunday",
       "latitude": "-37.862091",
       "longitude": "145.010295"
    },
    {
       "id": 7,
       "name": "Wilk Street Medical Practice",
+      "description": "Wilk Street Medical Practice is a small, personal , friendly general practice in North Caulfield, providing top quality medical care, and with an emphasis on preventive medicine.",
+      "practitioner": "Dr Rachel Cann",
+      "address": "17 Wilks St, Caulfield North VIC 3161",
+      "phone": "(03) 9077 9997",
+      "openinghours": "Monday to Friday 9.30am to 2.30pm, Closed on Saturday and Sunday",
       "latitude": "-37.862893",
       "longitude": "145.014146"
    },
    {
       "id": 8,
       "name": "Caulfield Park Clinic",
+      "description": "We are committed to promoting health, wellbeing and disease prevention to all patients.",
+      "practitioner": "Dr Michael Levenda",
+      "address": "139 Hawthorn Rd, Caulfield North VIC 3161",
+      "phone": "(03) 9530 0200",
+      "openinghours": "Monday to Friday 9am to 6pm, Saturday 9am to 11am, Closed on Sunday",
       "latitude": "-37.8735198",
       "longitude": "145.0225092"
    },
    {
       "id": 9,
       "name": "Elsternwick Medical Centre",
+      "description": "The team of experienced healthcare practitioners and staff at Elsternwick Medical Centre are committed to providing quality family medical care. The facility also provides procedural areas and Pathology to complete the centre's offering.",
+      "practitioner": "Dr Irina Khanina",
+      "address": "604-610 Glen Huntly Rd, Elsternwick VIC 3185",
+      "phone": "(03) 9528 2077",
+      "openinghours": "Monday to Friday 8am to 7pm, Saturday 8.30am - 1pm, Sunday 9am to 12pm",
       "latitude": "-37.88071",
       "longitude": "145.0189236"
    },
    {
       "id": 10,
       "name": "South Caulfield Family Medical Clinic",
+      "description": "The clinic works hard to keep up to date with the latest medical innovations and to bring you efficient and highly personalised service.",
+      "practitioner": "(03) 9528 3990",
+      "address": "348 Kooyong Rd, Caulfield South VIC 3162",
+      "phone": "(03) 9528 3990",
+      "openinghours": "Monday to Friday 9.30am to 6pm, Saturday 9.30am to 1.30pm, Closed on Sunday",
       "latitude": "-37.887841",
       "longitude": "145.0148517"
    }
