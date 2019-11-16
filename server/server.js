@@ -8,17 +8,15 @@ const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport");
 const app = express();
 const PORT = process.env.PORT || 8080;
+const cors = require("cors");
 
-// Routes
-const user = require("./routes/user");
-app.use("/user", user);
+app.use(cors());
 
 // Middleware
-app.use(morgan("dev"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
-
+app.use(morgan("dev"));
 // Sessions
 // 1. Generates unique session id
 // 2. Savves session id as cookie and passes back to browser
@@ -38,6 +36,11 @@ app.use(session({
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+const user = require("./routes/user");
+app.use("/user", user);
+
 
 
 // Start the server

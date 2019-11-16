@@ -3,8 +3,8 @@ const router = express.Router();
 const User = require("../database/models/user");
 const passport = require("../passport");
 
-router.post("/", (req, res) => {
-   console.log("User sign-up");
+router.post("/signup", (req, res) => {
+   console.log("User sign-up", req.body);
    const { username, password } = req.body;
 
    // Validation check
@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
    });
 });
 
-router.post("login", function (req, res, next) {
+router.post("/login", function (req, res, next) {
    console.log("Routes/user/js, login, req.body: " + req.body);
    next();
 },

@@ -2,6 +2,9 @@
    {
       "id": 1,
       "name": "Cabrini General Practice",
+      "description": "",
+      "address": "992 Glen Huntly Rd, Caulfield South VIC 3162",
+      "openinghours": "Monday to Friday 8.30am to 6pm, Saturday 8.30am to 11am, Closed Sundays",
       "latitude": " -37.888136",
       "longitude": "145.032693"
    },

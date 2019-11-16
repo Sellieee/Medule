@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+const axiosInstance = axios.create({
+   baseURL: "http://localhost:8080"
+})
+
 class Signup extends Component {
    constructor() {
       super();
@@ -14,17 +18,20 @@ class Signup extends Component {
    };
 
    handleChange(event) {
+      console.log("------")
       this.setState({
          [event.target.name]: event.target.value
       });
    };
 
    handleSubmit(event) {
+      console.log("------")
+
       event.preventDefault();
       console.log("Sign-up-form, username: " + this.state.username);
 
       // Axios post
-      axios.post("/user/", {
+      axiosInstance.post("/user/signup", {
          username: this.state.username,
          password: this.state.password
       })

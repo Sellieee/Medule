@@ -16,7 +16,12 @@ class Search extends Component {
       query: ""
     };
 
+    window.initMap = this.initMap.bind(this);
   }
+
+  initMap() {
+    return;
+  };
 
   handleScriptLoad = () => {
     // Declare Options For Autocomplete

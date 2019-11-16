@@ -1,23 +1,6 @@
 import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
 import item from "../places.json";
-import Modal from "./Modal";
-
-// const AnyReactComponent = ({ text }) => (
-//     <div style={{
-//         color: "white",
-//         background: "grey",
-//         padding: "15px 10px",
-//         display: "inline-flex",
-//         textAlign: "center",
-//         alignItems: "center",
-//         justifyContent: "center",
-//         borderRadius: "100%",
-//         transform: "translate(-50%, -50%)"
-//     }}>
-//         {text}
-//     </div>
-// );
 
 class SimpleMapPage extends Component {
     defaultProps = {
@@ -27,16 +10,8 @@ class SimpleMapPage extends Component {
 
     state = {
         item: item,
-        modal: Modal
     }
 
-    showDoctorModal = () => {
-        this.setState({ show: true });
-    }
-
-    hideDoctorModal = () => {
-        this.setState({ show: false });
-    }
 
     render() {
         return (

@@ -2,6 +2,10 @@ import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import axios from "axios"
 
+const axiosInstance = axios.create({
+   baseURL: "http://localhost:8080"
+})
+
 class LoginForm extends Component {
    constructor() {
       super();
@@ -25,7 +29,7 @@ class LoginForm extends Component {
       event.preventDefault();
       console.log("handleSubmit");
 
-      axios.post("/user/login", {
+      axiosInstance.post("/user/login", {
          username: this.state.username,
          password: this.state.password
       })
@@ -33,16 +37,14 @@ class LoginForm extends Component {
             console.log("Login response: " + response);
 
             if (response.status === 200) {
-               this.props.updateUser({
-                  loggedIn: true,
-                  username: response.data.username
-               });
+               this.props.updateUser(response.data.username);
                this.setState({
                   redirectTo: "/"
                });
             };
          })
          .catch(error => {
+            // display error message
             console.log("Login error: " + error);
          });
    };
