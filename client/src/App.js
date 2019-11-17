@@ -26,7 +26,7 @@ const customStyles = {
   }
 };
 
-const API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
+// const API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
 
 Modal.setAppElement("#root");
 
