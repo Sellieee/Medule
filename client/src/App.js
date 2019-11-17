@@ -12,6 +12,7 @@ import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Searchbar from "./components/Searchbar";
+import GlobalStyle from "./Global";
 
 const customStyles = {
   content: {
@@ -35,7 +36,8 @@ class App extends Component {
       modalIsOpen: false,
       modalData: "",
       loggedIn: false,
-      username: null
+      username: null,
+      navbarOpen: false
     };
 
     this.openModal = this.openModal.bind(this);
@@ -43,6 +45,10 @@ class App extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.getUser = this.getUser.bind(this);
     this.updateUser = this.updateUser.bind(this);
+  }
+
+  handleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
   }
 
   componentDidMount() {
@@ -92,7 +98,15 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <>
+          <Navbar
+            updateUser={this.updateUser}
+            loggedIn={this.state.loggedIn}
+            navbarState={this.state.navbarOpen}
+            handleNavbar={this.handleNavbar}
+          />
+          <GlobalStyle />
+        </>
         {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
 
         <Home loggedIn={this.state.loggedIn} />
