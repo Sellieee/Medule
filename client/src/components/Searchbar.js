@@ -23,7 +23,7 @@ export default class Searchbar extends React.Component {
       var longitude = geocodedPrediction.geometry.location.lng
       var numlat = latitude()
       var numlng = longitude()
-      console.log(latitude(), longitude())
+      // console.log(latitude(), longitude())
       this.setState({ search: this.state.search, value: geocodedPrediction.formatted_address, lat: numlat, lng: numlng })
 
       console.log(this.state.lat, this.state.lng, "This works!")

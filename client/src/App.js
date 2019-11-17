@@ -12,8 +12,6 @@ import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Searchbar from "./components/Searchbar";
-import Calendar from "./components/Calendar";
-
 
 const customStyles = {
   content: {
@@ -113,8 +111,6 @@ class App extends Component {
           render={() =>
             <Calendar />}
         />}
-
-        <Calendar />
 
         {/* <button onClick={this.openModal}>Open Modal</button> */}
         <Modal
