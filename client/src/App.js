@@ -13,6 +13,7 @@ import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Searchbar from "./components/Searchbar";
 import GlobalStyle from "./Global";
+import Brand from "./components/Brand";
 
 const customStyles = {
   content: {

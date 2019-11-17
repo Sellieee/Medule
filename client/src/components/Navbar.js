@@ -4,6 +4,8 @@ import "../App.css";
 // import Nav from 'react-bootstrap/Nav';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import axios from "axios";
+import Brand from "./Brand";
+
 
 class Navbar extends Component {
    constructor() {
@@ -33,7 +35,8 @@ class Navbar extends Component {
       console.log(this.props);
 
       return (
-         <div>
+         <div className="brand">
+            <Brand />
             <header className="navbar" id="nav-container">
                <div className="col-4" >
                   {loggedIn ? (
@@ -44,9 +47,9 @@ class Navbar extends Component {
                      </section>
                   ) : (
                         <section className="navbar-section">
-                           <Link to="/" className="btn btn-link text-secondary name">
+                           {/* <Link to="/" className="btn btn-link text-secondary name">
                               <span className="text-secondary">Medule</span>
-                           </Link>
+                           </Link> */}
                            <Link to="/login" className="btn btn-link text-secondary">
                               <span className="text-secondary">Login</span>
                            </Link>

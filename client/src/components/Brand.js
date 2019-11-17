@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 
-import logo from "../../public/Medule.png";
+import logo from "../Medule.png";
 
 const Brand = () => {
    return (
