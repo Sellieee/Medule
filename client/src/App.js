@@ -11,7 +11,7 @@ import Signup from "./components/Signup";
 import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import GoogleFontLoader from "react-google-font-loader";
+import Searchbar from "./components/Searchbar";
 
 
 
@@ -97,7 +97,7 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
 
-        <Home />
+        <Home loggedIn={this.state.loggedIn} />
 
         <Route path="/login"
           render={() =>
@@ -139,10 +139,11 @@ class App extends Component {
 
         {
           this.state.loggedIn && <div>
-            <Search
+            {/* <Search
               apiKey={API_KEY}
-            />
-            <Map
+            /> */}
+            <Searchbar />
+            {/* <Map
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `400px` }} />}
@@ -151,7 +152,8 @@ class App extends Component {
               zoom={11}
               apiKey={API_KEY}
               openModal={this.openModal}
-            /></div>
+            /> */}
+          </div>
         }
 
         {/* <AppointmentApp /> */}
