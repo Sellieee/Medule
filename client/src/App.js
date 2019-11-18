@@ -13,7 +13,6 @@ import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Searchbar from "./components/Searchbar";
 import GlobalStyle from "./Global";
-import Brand from "./components/Brand";
 
 const customStyles = {
   content: {
@@ -38,7 +37,10 @@ class App extends Component {
       modalData: "",
       loggedIn: false,
       username: null,
-      navbarOpen: false
+      navbarOpen: false,
+      lat: null,
+      lng: null
+
     };
 
     this.openModal = this.openModal.bind(this);
@@ -68,6 +70,9 @@ class App extends Component {
     this.setState({ modalIsOpen: false, modalData: "" });
   }
 
+  handleSearch = (lat, lng) => {
+    this.setState({ lat, lng });
+  }
 
   updateUser(username) {
     this.setState({
@@ -155,7 +160,8 @@ class App extends Component {
             {/* <Search
               apiKey={API_KEY}
             /> */}
-            <Searchbar />
+            <Searchbar onSearch={this.handleSearch} />
+            <GoogleMap searchLat={this.state.lat} searchLng={this.state.lng} />
             {/* <Map
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
               loadingElement={<div style={{ height: `100%` }} />}
