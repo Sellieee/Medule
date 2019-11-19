@@ -3,11 +3,6 @@ import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "reac
 import item from "../places.json";
 
 class SimpleMapPage extends Component {
-    // defaultProps = {
-    //     center: { lat: this.props.lat, lng: this.props.lng },
-    //     zoom: 14,
-    // };
-
     constructor(props) {
         super(props);
 
@@ -29,7 +24,6 @@ class SimpleMapPage extends Component {
             center: center
         })
     }
-
 
     render() {
         console.log(this.props.lat, this.props)
