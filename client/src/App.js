@@ -28,8 +28,6 @@ const customStyles = {
   }
 };
 
-// const API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
-
 Modal.setAppElement("#root");
 
 class App extends Component {
@@ -41,9 +39,8 @@ class App extends Component {
       loggedIn: false,
       username: null,
       navbarOpen: false,
-      lat: -24.9923319,
-      lng: 135.2252427
-
+      lat: -37.808836,
+      lng: 144.962083
     };
 
     this.openModal = this.openModal.bind(this);
@@ -77,12 +74,9 @@ class App extends Component {
     this.setState({ lat, lng });
   }
 
-  updateUser(username) {
-    console.log("USERNAME IS", username);
-    this.setState({
-      loggedIn: true,
-      username: username
-    });
+  updateUser(user) {
+    // console.log("USERNAME IS", username);
+    this.setState(user);
   };
 
   getUser() {
@@ -171,16 +165,13 @@ class App extends Component {
 
               {
                 this.state.loggedIn && <div>
-                  {/* <Search
-              apiKey={API_KEY}
-            /> */}
                   <Searchbar onSearch={this.handleSearch} googleMaps={googleMaps} />
                   <Map lat={this.state.lat} lng={this.state.lng}
                     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
-                    apiKey="AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
+                    apiKey={MY_API_KEY}
                     zoom={11}
                     openModal={this.openModal}
 

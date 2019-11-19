@@ -1,12 +1,10 @@
 import React, { Component } from "react"
-import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGooglePlacesSuggest from "react-google-places-suggest"
 import { longStackSupport } from "q"
 // import Map from "./Map"
 
-const MY_API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY" // fake
 
-export default class Searchbar extends React.Component {
+export default class Searchbar extends Component {
    state = {
       search: "",
       value: "",
@@ -63,6 +61,7 @@ export default class Searchbar extends React.Component {
                )}
             >
                <input
+                  className="searchbar"
                   type="text"
                   value={value}
                   placeholder="Search a location"

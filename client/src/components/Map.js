@@ -8,9 +8,27 @@ class SimpleMapPage extends Component {
     //     zoom: 14,
     // };
 
-    // state = {
-    //     item: item,
-    // }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            item: item,
+            center: { lat: this.props.lat, lng: this.props.lng }
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.lat !== this.props.lat || prevProps.lng !== this.props.lng) {
+            console.log()
+            this.setState({ center: { lat: this.props.lat, lng: this.props.lng } })
+        }
+    }
+
+    handleCenterChange = (center) => {
+        this.setState({
+            center: center
+        })
+    }
 
 
     render() {
@@ -18,16 +36,16 @@ class SimpleMapPage extends Component {
 
         return (
             <div style={{ width: "100%", height: "400px" }}>
-                Map loaded on search
                 <GoogleMap
                     bootstrapURLKeys={{ key: this.props.apiKey }}
-                    defaultCenter={{ lat: this.props.lat, lng: this.props.lng }}
+                    onCenterChanged={this.handleCenterChange}
+                    center={this.state.center}
                     defaultZoom={14}
                 >
-                    <Marker position={{ lat: this.props.lat, lng: this.props.lng }} />
-                    {/* {this.state.item.map((item, i) => {
-                        let lat = parseFloat(this.props.lat, 10);
-                        let lng = parseFloat(this.props.lng, 10);
+                    {/* <Marker position={{ lat: this.props.lat, lng: this.props.lng }} /> */}
+                    {this.state.item.map((item, i) => {
+                        let lat = parseFloat(item.latitude, 10);
+                        let lng = parseFloat(item.longitude, 10);
                         return (
                             <Marker
                                 id={item.id}
@@ -39,10 +57,10 @@ class SimpleMapPage extends Component {
                                 {this.state.position &&
                                     <InfoWindow position={this.state.position}>
                                         <h1>{item.name}</h1>
-                                    </InfoWindow>
-                                        </Marker>
+                                    </InfoWindow>}
+                            </Marker>
                         )
-                    })} */}
+                    })}
                 </GoogleMap>
             </div>
         );
