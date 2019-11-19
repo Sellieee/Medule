@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
 import item from "../places.json";
 
-export default class SimpleMapPage extends Component {
-    defaultProps = {
-        center: { lat: this.props.lat, lng: this.props.lng },
-        zoom: 14,
-    };
+class SimpleMapPage extends Component {
+    // defaultProps = {
+    //     center: { lat: this.props.lat, lng: this.props.lng },
+    //     zoom: 14,
+    // };
 
     // state = {
     //     item: item,
@@ -14,15 +14,18 @@ export default class SimpleMapPage extends Component {
 
 
     render() {
+        console.log(this.props.lat, this.props)
+
         return (
             <div style={{ width: "100%", height: "400px" }}>
                 Map loaded on search
-                {/* <GoogleMap
+                <GoogleMap
                     bootstrapURLKeys={{ key: this.props.apiKey }}
                     defaultCenter={{ lat: this.props.lat, lng: this.props.lng }}
                     defaultZoom={14}
-                > */}
-                {/* {this.state.item.map((item, i) => {
+                >
+                    <Marker position={{ lat: this.props.lat, lng: this.props.lng }} />
+                    {/* {this.state.item.map((item, i) => {
                         let lat = parseFloat(this.props.lat, 10);
                         let lng = parseFloat(this.props.lng, 10);
                         return (
@@ -40,10 +43,10 @@ export default class SimpleMapPage extends Component {
                                         </Marker>
                         )
                     })} */}
-                {/* </GoogleMap> */}
+                </GoogleMap>
             </div>
         );
     };
 };
 
-// export default withScriptjs(withGoogleMap(SimpleMapPage))
+export default withGoogleMap(SimpleMapPage)
