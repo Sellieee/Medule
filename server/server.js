@@ -9,6 +9,7 @@ const passport = require("./passport");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const cors = require("cors");
+const path = require('path');
 
 app.use(cors());
 
@@ -41,6 +42,13 @@ app.use(passport.session());
 const user = require("./routes/user");
 app.use("/user", user);
 
+if (process.env.NODE_ENV === "production") {
+   console.log("RUNNING IN PRODUCTION MODE")
+   app.use(express.static(path.resolve(__dirname, '../client/build')));
+   app.get("/", (req, res) => {
+      res.sendFile(path.resolve(__dirname, '../client/build/index.html'));
+   })
+}
 
 // Start the server
 app.listen(PORT, () => {

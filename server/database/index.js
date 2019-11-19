@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 // Connect to medule-login Mongo database
-const url = "mongodb://localhost:27017/medule-login";
+const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medule-login";
 
 mongoose.connect(url).then(
    () => {
