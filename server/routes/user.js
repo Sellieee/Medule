@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../database/models/user");
 const passport = require("../passport");
 
-router.post("/signup", (req, res) => {
+router.post("/user/signup", (req, res) => {
    console.log("User sign-up", req.body);
    const { username, password } = req.body;
 
