@@ -169,19 +169,26 @@ class App extends Component {
                           style={customStyles}
                           contentLabel="Example Modal"
                         >
-                          <h2 ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
-                          <br>
-                          </br>
-                          <div>
-                            <p>{this.state.modalData.name}</p>
+                          <h2 class="drname" ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
+                          <br />
+                          <div class="drinfo">
+                            <p><strong>{this.state.modalData.name}</strong></p>
+                            <hr />
                             <p>{this.state.modalData.address}</p>
                             <p>{this.state.modalData.phone}</p>
                             <p>{this.state.modalData.openinghours}</p>
                           </div>
-                          <Link to="/calendar"><button>{this.state.modalData.practitioner}</button></Link>
-                          <button onClick={this.closeModal}>Close</button>
+                          <Link to="/calendar">
+                            <button class="authbtn">{this.state.modalData.practitioner}</button>
+                          </Link>
+                          <br />
+                          <br />
+                          <br />
+                          <button class="closebtn" onClick={this.closeModal}>Close</button>
                         </Modal >
                         <Searchbar onSearch={this.handleSearch} googleMaps={googleMaps} />
+                        <br />
+                        <br />
                         <Map lat={this.state.lat} lng={this.state.lng}
                           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
                           loadingElement={<div style={{ height: `100%` }} />}
@@ -190,7 +197,6 @@ class App extends Component {
                           apiKey={MY_API_KEY}
                           zoom={11}
                           openModal={this.openModal}
-
                         />
                       </div>
                     }

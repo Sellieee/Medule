@@ -75,11 +75,10 @@ padding: 2px;}
 }
 
 .aboutMeduleText {
-  padding: 5% 10% 2% 10%;
+  padding: 3% 10% 2% 10%;
   color:red;
-  font-family: 'Caveat', cursive;
-  font-size: 40px;
-  font-weight: bold;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 45px;
 }
 
 .menu{
@@ -117,6 +116,45 @@ padding: 2px;}
 
 .intro-text{
   font-size: 40px;
-  font-family: 'Meie Script', cursive;
+  font-family: 'Allura', cursive;
   font-weight: bold;
+}
+
+.authlabel {
+  font-size: 30px;
+  padding-top: 20px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.authbtn {
+  width: fit-content;
+  padding: 5px 20px;
+  background-color: rgb(248, 161, 0);
+  border: none;
+  color:white;
+  font-size: 20px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.authinput {
+  font-weight: bold;
+}
+
+.drname {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.drinfo {
+font-size: 15px;
+}
+
+.closebtn{
+  width: fit-content;
+  padding: 5px 20px;
+  background-color: rgb(0, 77, 100);
+  border: none;
+  color:white;
+  font-size: 20px;
+  font-family: 'Bebas Neue', cursive;
 }

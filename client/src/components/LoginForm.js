@@ -42,16 +42,6 @@ class LoginForm extends Component {
       })
          .then(response => {
             console.log("Login response: " + response);
-
-            // THIS IS THE ORIGINAL CODE
-            // if (response.status === 200) {
-            //    this.props.updateUser({ loggedIn: true, username: response.data.username });
-            //    this.setState({
-            //       redirectTo: "/"
-            //    });
-            // };
-
-            // THIS IS THE MODIFIED CODE
             if (response.status === 200) {
                this.props.updateUser({
                   loggedIn: true,
@@ -63,6 +53,7 @@ class LoginForm extends Component {
             };
          })
          .catch(error => {
+
             // display error message
             console.log("Login error: " + error);
          });
@@ -79,82 +70,45 @@ class LoginForm extends Component {
       } else {
          return (
 
-            // THIS IS THE ORIGINAL CODE
-            // <div className="loginForm">
-            //    {/* <h4>Login</h4> */}
-            //    <form className="form-horizontal">
-            //       <div className="form-group">
-            //          <div className="col -1 col-ml-auto">
-            //             <label className="form-label" htmlFor="username">Username</label>
-            //          </div>
-            //          <div className="col-3 col-mr-auto">
-            //             <input className="form-input"
-            //                type="text"
-            //                id="username"
-            //                name="username"
-            //                placeholder="Username"
-            //                value={this.state.username}
-            //                onChange={this.handleChange}
-            //             />
-            //          </div>
-            //       </div>
-            //       <div className="form-group">
-            //          <div className="col-1 col-ml-auto">
-            //             <label className="form-label" htmlFor="password">Password</label>
-            //          </div>
-            //          <div className="col-3 col-mr-auto">
-            //             <input className="form-input"
-            //                type="password"
-            //                name="password"
-            //                placeholder="Password"
-            //                value={this.state.password}
-            //                onChange={this.handleChange}
-            //             />
-            //          </div>
-            //       </div>
-            //       <div className="form-group">
-            //          <div className="col-7"></div>
-            //          <button className="btn btn-primary col-1 col-mr-auto"
-            //             onClick={this.handleSubmit}
-            //             type="submit">Login</button>
-            //       </div>
-            //    </form>
-            // </div>
             <div className="auth" >
                <div class="row text-center">
                   <div class="col-sm-4"></div>
                   <div class="col-sm-4">
-                     <form>
-                        {/* <div className="form-auth" >
-                     <div className="form-group col-3" > */}
-                        <label> Username </label>
+                     <form class="auth-form">
+                        <label class="authlabel"> Username </label>
                         <input
                            type="text"
-                           className="form-control"
+                           class="authinput"
                            id="username"
+                           className="form-control"
                            name="username"
                            placeholder="Username"
                            value={this.state.username}
                            onChange={this.handleChange}
                         />
-
+                        <br />
+                        <br />
+                        <br />
                         <div className="form-group" >
-                           <label htmlFor="password"> Password </label>
+                           <label class="authlabel" htmlFor="password"> Password </label>
                            <input
                               type="password"
-                              className="form-control"
+                              class="authinput"
                               name="password"
+                              className="form-control"
                               placeholder="Password"
                               value={this.state.password}
                               onChange={this.handleChange}
                            />
                         </div>
+                        <br />
                         <button
+                           class="authbtn"
                            type="submit"
-                           className="btn btn-primary btn-block"
+                           // className="btn btn-primary btn-block"
                            onClick={this.handleSubmit}
                         > Submit
-                  </button>
+                       </button>
 
                         {this.state.showError ?
                            <div class="alert alert-danger" >

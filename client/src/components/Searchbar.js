@@ -48,9 +48,8 @@ export default class Searchbar extends Component {
                      googleMaps={this.props.googleMaps}
                      autocompletionRequest={{
                         input: search,
-                        // Optional options
-                        // https://developers.google.com/maps/documentation/javascript/reference?hl=fr#AutocompletionRequest
                      }}
+
                      // Optional props
                      onNoResult={this.handleNoResult}
                      onSelectSuggest={this.handleSelectSuggest}
@@ -71,7 +70,6 @@ export default class Searchbar extends Component {
                         placeholder="Search a location"
                         onChange={this.handleInputChange}
                      />
-                     {/* <Map lat={this.state.lat} lng={this.state.lng} /> */}
                   </ReactGooglePlacesSuggest>
                </div>
                <div className="col-sm-3"></div>

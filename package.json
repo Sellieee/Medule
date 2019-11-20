@@ -22,6 +22,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.11.0",
+    "react-alert": "^6.0.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-burger-menu": "^2.6.12",
     "react-dom": "^16.11.0",
