@@ -45,7 +45,7 @@ class Signup extends Component {
                this.setState({
 
                   // Redirect to login page on successful sign-up
-                  redirectTo: "/user/login"
+                  redirectTo: "/login"
                });
             } else {
                console.log("Username already taken.");
