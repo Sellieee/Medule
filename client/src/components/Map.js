@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { GoogleMap, Marker, InfoWindow, withGoogleMap, withScriptjs } from "react-google-maps";
 import item from "../places.json";
+import "../App.css";
 
 class SimpleMapPage extends Component {
     constructor(props) {
@@ -29,14 +30,14 @@ class SimpleMapPage extends Component {
         console.log(this.props.lat, this.props)
 
         return (
-            <div style={{ width: "100%", height: "400px" }}>
+            <div className="gmap" style={{ width: "100%", height: "400px" }}>
                 <GoogleMap
                     bootstrapURLKeys={{ key: this.props.apiKey }}
                     onCenterChanged={this.handleCenterChange}
                     center={this.state.center}
                     defaultZoom={14}
                 >
-                    {/* <Marker position={{ lat: this.props.lat, lng: this.props.lng }} /> */}
+
                     {this.state.item.map((item, i) => {
                         let lat = parseFloat(item.latitude, 10);
                         let lng = parseFloat(item.longitude, 10);
@@ -48,6 +49,7 @@ class SimpleMapPage extends Component {
                                 title={item.name}
                                 onClick={() => this.props.openModal(item)}
                             >
+
                                 {this.state.position &&
                                     <InfoWindow position={this.state.position}>
                                         <h1>{item.name}</h1>

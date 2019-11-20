@@ -60,6 +60,7 @@ class App extends Component {
 
   openModal(data) {
     this.setState({ modalIsOpen: true, modalData: data });
+
   }
 
   afterOpenModal() {
@@ -154,30 +155,33 @@ class App extends Component {
               {/* THIS IS THE ORIGINAL CODE */}
               <Route path="/signedin"
                 render={() => (
-                  <>
-                    <Modal
-                      isOpen={this.state.modalIsOpen}
-                      onAfterOpen={this.afterOpenModal}
-                      onRequestClose={this.closeModal}
-                      style={customStyles}
-                      contentLabel="Example Modal"
-                    >
-                      <h2 ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
-                      <br>
-                      </br>
-                      <div>
-                        <p>{this.state.modalData.name}</p>
-                        <p>{this.state.modalData.address}</p>
-                        <p>{this.state.modalData.phone}</p>
-                        <p>{this.state.modalData.openinghours}</p>
-                      </div>
-                      <Link to="/calendar"><button>{this.state.modalData.practitioner}</button></Link>
-                      <button onClick={this.closeModal}>Close</button>
-                    </Modal >
+                  <div>
+                    <div>
 
+
+                    </div>
 
                     {
                       this.state.loggedIn && <div>
+                        <Modal class="drmodal"
+                          isOpen={this.state.modalIsOpen}
+                          onAfterOpen={this.afterOpenModal}
+                          onRequestClose={this.closeModal}
+                          style={customStyles}
+                          contentLabel="Example Modal"
+                        >
+                          <h2 ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
+                          <br>
+                          </br>
+                          <div>
+                            <p>{this.state.modalData.name}</p>
+                            <p>{this.state.modalData.address}</p>
+                            <p>{this.state.modalData.phone}</p>
+                            <p>{this.state.modalData.openinghours}</p>
+                          </div>
+                          <Link to="/calendar"><button>{this.state.modalData.practitioner}</button></Link>
+                          <button onClick={this.closeModal}>Close</button>
+                        </Modal >
                         <Searchbar onSearch={this.handleSearch} googleMaps={googleMaps} />
                         <Map lat={this.state.lat} lng={this.state.lng}
                           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
@@ -189,9 +193,13 @@ class App extends Component {
                           openModal={this.openModal}
 
                         />
+
+
+
                       </div>
                     }
-                  </>
+
+                  </div>
                 )} />
 
 

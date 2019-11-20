@@ -18,6 +18,7 @@ export default class Searchbar extends Component {
    }
 
    handleSelectSuggest = (geocodedPrediction, originalPrediction) => {
+      console.log(geocodedPrediction, originalPrediction);
       var latitude = geocodedPrediction.geometry.location.lat
       var longitude = geocodedPrediction.geometry.location.lng
       var numlat = latitude()
@@ -41,35 +42,42 @@ export default class Searchbar extends Component {
       return (
 
          (
-            <ReactGooglePlacesSuggest
-               googleMaps={this.props.googleMaps}
-               autocompletionRequest={{
-                  input: search,
-                  // Optional options
-                  // https://developers.google.com/maps/documentation/javascript/reference?hl=fr#AutocompletionRequest
-               }}
-               // Optional props
-               onNoResult={this.handleNoResult}
-               onSelectSuggest={this.handleSelectSuggest}
-               onStatusUpdate={this.handleStatusUpdate}
-               textNoResults="My custom no results text" // null or "" if you want to disable the no results item
-               customRender={prediction => (
-                  <div className="customWrapper">
-                     {prediction
-                        ? prediction.description
-                        : "My custom no results text"}
-                  </div>
-               )}
-            >
-               <input
-                  className="searchbar"
-                  type="text"
-                  value={value}
-                  placeholder="Search a location"
-                  onChange={this.handleInputChange}
-               />
-               {/* <Map lat={this.state.lat} lng={this.state.lng} /> */}
-            </ReactGooglePlacesSuggest>
+            <div className="row">
+               <div className="col-sm-3"></div>
+               <div className="googlesearch col-sm-6">
+                  <ReactGooglePlacesSuggest
+                     displayPoweredByGoogle={false}
+                     googleMaps={this.props.googleMaps}
+                     autocompletionRequest={{
+                        input: search,
+                        // Optional options
+                        // https://developers.google.com/maps/documentation/javascript/reference?hl=fr#AutocompletionRequest
+                     }}
+                     // Optional props
+                     onNoResult={this.handleNoResult}
+                     onSelectSuggest={this.handleSelectSuggest}
+                     onStatusUpdate={this.handleStatusUpdate}
+                     textNoResults="My custom no results text" // null or "" if you want to disable the no results item
+                     customRender={prediction => (
+                        <div className="customWrapper">
+                           {prediction
+                              ? prediction.description
+                              : "My custom no results text"}
+                        </div>
+                     )}
+                  >
+                     <input
+                        className="searchbar"
+                        type="text"
+                        value={value}
+                        placeholder="Search a location"
+                        onChange={this.handleInputChange}
+                     />
+                     {/* <Map lat={this.state.lat} lng={this.state.lng} /> */}
+                  </ReactGooglePlacesSuggest>
+               </div>
+               <div className="col-sm-3"></div>
+            </div>
          )
       )
    }

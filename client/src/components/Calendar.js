@@ -13,7 +13,7 @@ export default class Calendar extends React.Component {
 
    constructor(props) {
       super(props);
-      this.width = props.width || "350px";
+      this.width = props.width || "80%";
       this.style = props.style || {};
       this.style.width = this.width; // add this
    }

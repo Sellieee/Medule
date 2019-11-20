@@ -50,11 +50,12 @@ class Navbar extends Component {
                            {/* <Link to="/" className="btn btn-link text-secondary name">
                               <span className="text-secondary">Medule</span>
                            </Link> */}
+
                            <Link to="/login" className="btn btn-link text-secondary">
-                              <span className="text-secondary">Login</span>
+                              <span class="menu">Login</span>
                            </Link>
-                           <Link to="/signup" className="btn btn-link">
-                              <span className="text-secondary">Sign up</span>
+                           <Link to="/signup" className="btn btn-link text-secondary">
+                              <span class="menu">Sign up</span>
                            </Link>
                         </section>
                      )}
