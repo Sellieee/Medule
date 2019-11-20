@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-image: url("./home.jpg");
+  background-size: cover;  
+  height: 100vh;
 }
 
 /* .loginForm {
@@ -59,12 +62,6 @@ padding: 2px;}
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 30px;
 }
-
-/* .navbar .name {
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-} */
 
 #top-filler {
   margin-bottom: auto;
@@ -157,4 +154,18 @@ font-size: 15px;
   color:white;
   font-size: 20px;
   font-family: 'Bebas Neue', cursive;
+}
+
+#username {
+  font-size: 20px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+#password {
+  font-size: 20px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.gmap {
+  background-image: url("./home.jpg");
 }

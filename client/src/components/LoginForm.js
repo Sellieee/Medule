@@ -95,6 +95,7 @@ class LoginForm extends Component {
                               type="password"
                               class="authinput"
                               name="password"
+                              id="password"
                               className="form-control"
                               placeholder="Password"
                               value={this.state.password}

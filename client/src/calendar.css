@@ -1,4 +1,7 @@
-    
+/* .App {
+    background-image: none;
+}     */
+
 .calendar-container,
 .calendar,
 .calendar-header,
@@ -6,11 +9,13 @@ td,
 tr {
     padding: 0;
     margin: 0;
+    height: 10px;
 }
 
 .calendar-container {
     border: 2px solid skyblue;
     align-content: center;
+    height: 80%;
 }
 
 .calendar {
@@ -22,7 +27,9 @@ tr {
 
 .calendar-header {
     border-bottom: 1px dashed skyblue;
-    font-size: 1.6em;
+    font-size: 40px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: bold;
 }
 
 .calendar-header td {
@@ -38,17 +45,19 @@ tr {
 }
 
 .week-day {
-    font-size: 0.8em;
+    font-size: 20px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: bold;
 }
 
 .day {
-    font-size: 0.8em;
+    font-size: 20px;
 }
 
 .day {
     cursor: pointer;
     width: 24px;
-    height: 24px;
+    height: 60px;
     line-height: 24px;
 }
 
@@ -85,12 +94,6 @@ tr {
     top: 0.6em;
     font-size: 0.6em;
     right:3px;
-}
-
-.prev {
-}
-
-.next {
 }
 
 .editor-year {

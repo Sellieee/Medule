@@ -84,6 +84,7 @@ class Signup extends Component {
                            class="authinput"
                            className="form-control"
                            type="password"
+                           id="password"
                            name="password"
                            placeholder="Password"
                            value={this.state.password}
