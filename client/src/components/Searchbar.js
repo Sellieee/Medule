@@ -24,7 +24,7 @@ export default class Searchbar extends Component {
       var numlat = latitude()
       var numlng = longitude()
       // console.log(latitude(), longitude())
-      this.setState({ search: this.state.search, value: geocodedPrediction.formatted_address, lat: numlat, lng: numlng })
+      this.setState({ search: "", value: geocodedPrediction.formatted_address, lat: numlat, lng: numlng })
 
       this.props.onSearch(numlat, numlng)
    }
