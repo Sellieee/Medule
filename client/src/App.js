@@ -130,12 +130,12 @@ class App extends Component {
                 }
               />
 
-              <Route path="/login"
+              <Route path="/user/login"
                 render={() =>
                   <LoginForm updateUser={this.updateUser} />}
               />
 
-              <Route path="/signup"
+              <Route path="/user/signup"
                 render={() =>
                   <Signup />}
               />
