@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const cors = require("cors");
 const path = require('path');
+const mongoose = require("mongoose");
 
 app.use(cors());
 
@@ -18,6 +19,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/medule-login");
 // Sessions
 // 1. Generates unique session id
 // 2. Savves session id as cookie and passes back to browser

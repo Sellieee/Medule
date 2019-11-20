@@ -17,7 +17,7 @@
     "material-ui-search-bar": "^0.4.2",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
-    "mongoose": "^5.7.7",
+    "mongoose": "^5.7.12",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
