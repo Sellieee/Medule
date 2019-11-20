@@ -10,6 +10,7 @@ tr {
 
 .calendar-container {
     border: 2px solid skyblue;
+    align-content: center;
 }
 
 .calendar {

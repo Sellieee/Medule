@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import form from "react-bootstrap/Form"
+import button from "react-bootstrap/Button"
+import "../App.css";
 
 const axiosInstance = axios.create({
    baseURL: "http://localhost:8080"
@@ -55,9 +58,9 @@ class Signup extends Component {
 
    render() {
       return (
-         <div className="signUpForm">
-            {/* <h4>Sign Up</h4> */}
-            <form className="form-horizontal">
+         <div className="auth">
+            {/* THIS IS THE ORIGINAL CODE */}
+            {/* <form className="form-horizontal">
                <div className="form-group">
                   <div className="col-1 col-ml-auto">
                      <label className="form-label" htmlFor="username">Username: </label>
@@ -95,6 +98,29 @@ class Signup extends Component {
                      type="submit"
                   >Sign Up</button>
                </div>
+            </form> */}
+
+            <form className="form-auth">
+               <div className="form-group col-3 col-mr-auto">
+                  <label>Username</label>
+                  <input type="text" className="form-control" id="username"
+                     name="username"
+                     placeholder="Username"
+                     value={this.state.username}
+                     onChange={this.handleChange} />
+               </div>
+
+               <div className="form-group col-3 col-mr-auto">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" className="form-control" name="password" placeholder="Password"
+                     value={this.state.password}
+                     onChange={this.handleChange} />
+               </div>
+               <button type="submit" className="btn btn-primary btn-block col-1 col-mr-auto" onClick={this.handleSubmit}>Submit</button>
+
+               {this.state.showError ? <div class="alert alert-danger" >
+                  <strong>Invalid username or password</strong>
+               </div> : null}
             </form>
          </div>
       )

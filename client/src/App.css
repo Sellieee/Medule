@@ -42,7 +42,7 @@ padding: 2px;}
   font-size: large;
 }
 
-span.text-secondary {
+.text-secondary {
   color: orange;
 }
 
@@ -88,12 +88,22 @@ span.text-secondary {
   font-weight: bold;
 }
 
-.App {
-  /* background-image: url("./background.gif"); */
-  background-size: % 100%;
+.loader {
+  background-image: url("./background.gif");
+  background-size: 100%;
+  min-height: 100vh;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.alert-danger {
+  margin-top: 20px;
+}
+
+.auth{
+  border-color: black;
+  align-content: center;
 }

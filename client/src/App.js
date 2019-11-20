@@ -13,9 +13,9 @@ import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GlobalStyle from "./Global";
 import ReactGoogleMapLoader from "react-google-maps-loader"
+// import Signedin from "./components/Signedin"
 
-
-const MY_API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY" // fake
+const MY_API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
 
 const customStyles = {
   content: {
@@ -123,7 +123,11 @@ class App extends Component {
               </>
               {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
 
-              <Home loggedIn={this.state.loggedIn} />
+              <Route path="/" exact
+                render={() =>
+                  <Home loggedIn={this.state.loggedIn} />
+                }
+              />
 
               <Route path="/login"
                 render={() =>
@@ -135,58 +139,66 @@ class App extends Component {
                   <Signup />}
               />
 
-              {this.state.loggedIn && <Route path="/calendar"
+              {/* <Route path="/signedin"
+                render={() =>
+                  <Signedin />} */}
+              {/* /> */}
+
+              <Route path="/calendar"
                 render={() =>
                   <Calendar />}
-              />}
+              />
 
               {/* <button onClick={this.openModal}>Open Modal</button> */}
-              <Modal
-                isOpen={this.state.modalIsOpen}
-                onAfterOpen={this.afterOpenModal}
-                onRequestClose={this.closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-              >
-                <h2 ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
-                <br>
-                </br>
-                <div>
-                  <p>{this.state.modalData.name}</p>
-                  <p>{this.state.modalData.address}</p>
-                  <p>{this.state.modalData.phone}</p>
-                  <p>{this.state.modalData.openinghours}</p>
-                </div>
-                <Link to="/calendar"><button>{this.state.modalData.practitioner}</button></Link>
-                {/* <Link to="/calendar">Go to Calendar</Link> */}
-                <button onClick={this.closeModal}>Close</button>
-              </Modal >
+
+              {/* THIS IS THE ORIGINAL CODE */}
+              <Route path="/signedin"
+                render={() => (
+                  <>
+                    <Modal
+                      isOpen={this.state.modalIsOpen}
+                      onAfterOpen={this.afterOpenModal}
+                      onRequestClose={this.closeModal}
+                      style={customStyles}
+                      contentLabel="Example Modal"
+                    >
+                      <h2 ref={subtitle => this.subtitle = subtitle}>Select a Practitioner</h2>
+                      <br>
+                      </br>
+                      <div>
+                        <p>{this.state.modalData.name}</p>
+                        <p>{this.state.modalData.address}</p>
+                        <p>{this.state.modalData.phone}</p>
+                        <p>{this.state.modalData.openinghours}</p>
+                      </div>
+                      <Link to="/calendar"><button>{this.state.modalData.practitioner}</button></Link>
+                      <button onClick={this.closeModal}>Close</button>
+                    </Modal >
 
 
-              {
-                this.state.loggedIn && <div>
-                  <Searchbar onSearch={this.handleSearch} googleMaps={googleMaps} />
-                  <Map lat={this.state.lat} lng={this.state.lng}
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                    apiKey={MY_API_KEY}
-                    zoom={11}
-                    openModal={this.openModal}
+                    {
+                      this.state.loggedIn && <div>
+                        <Searchbar onSearch={this.handleSearch} googleMaps={googleMaps} />
+                        <Map lat={this.state.lat} lng={this.state.lng}
+                          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
+                          loadingElement={<div style={{ height: `100%` }} />}
+                          containerElement={<div style={{ height: `400px` }} />}
+                          mapElement={<div style={{ height: `100%` }} />}
+                          apiKey={MY_API_KEY}
+                          zoom={11}
+                          openModal={this.openModal}
 
-                  />
-                  {/* <Map
-              center={{ lat: -24.9923319, lng: 135.2252427 }}
-            /> */}
-                </div>
-              }
+                        />
+                      </div>
+                    }
+                  </>
+                )} />
 
-              {/* <AppointmentApp /> */}
+
             </div >
           }
           else {
-            return <p>Loading Google Maps</p>
+            return <p className="loader">Loading Google Maps</p>
           }
         }
         } />
