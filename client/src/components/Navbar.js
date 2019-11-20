@@ -42,7 +42,7 @@ class Navbar extends Component {
                   {loggedIn ? (
                      <section className="navbar-section">
                         <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                           <span className="text-secondary">logout</span></Link>
+                           <span class="menu">logout</span></Link>
 
                      </section>
                   ) : (

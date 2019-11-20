@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import ReactGooglePlacesSuggest from "react-google-places-suggest"
 import { longStackSupport } from "q"
 import "../App.css";
-// import Map from "./Map"
-
 
 export default class Searchbar extends Component {
    state = {

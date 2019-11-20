@@ -75,8 +75,23 @@ padding: 2px;}
 }
 
 .aboutMeduleText {
-  padding: 10% 10% 2% 10%;
-  font-size: 200%;
+  padding: 5% 10% 2% 10%;
+  color:red;
+  font-family: 'Caveat', cursive;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.menu{
+  color:rgb(250, 123, 123);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.menu:hover {
+  font-weight: bolder;
+  color: purple;
+  font-size: 50px;
 }
 
 .meduleSlogan{
@@ -99,23 +114,9 @@ padding: 2px;}
 .alert-danger {
   margin-top: 20px;
 }
-/* 
-.form-auth{
-  border-color: black;
-  align-content: center;
-} */
-/* 
-.drmodal {
-  z-index: 40;
-  position: absolute;
-}
 
-.googlesearch {
-  position: absolute;
-  z-index: 30;
+.intro-text{
+  font-size: 40px;
+  font-family: 'Meie Script', cursive;
+  font-weight: bold;
 }
-
-.gmap{
-  position: absolute;
-  z-index: -20;
-} */

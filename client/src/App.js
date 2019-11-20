@@ -122,7 +122,7 @@ class App extends Component {
                 />
                 <GlobalStyle />
               </>
-              {this.state.loggedIn && <p>Welcome to Medule, {this.state.username}!</p>}
+              {this.state.loggedIn && <p class="intro-text">Welcome to Medule, {this.state.username}!</p>}
 
               <Route path="/" exact
                 render={() =>
@@ -160,7 +160,6 @@ class App extends Component {
 
 
                     </div>
-
                     {
                       this.state.loggedIn && <div>
                         <Modal class="drmodal"
@@ -193,9 +192,6 @@ class App extends Component {
                           openModal={this.openModal}
 
                         />
-
-
-
                       </div>
                     }
 
@@ -206,7 +202,7 @@ class App extends Component {
             </div >
           }
           else {
-            return <p className="loader">Loading Google Maps</p>
+            return <p className="loader">Loading Medule</p>
           }
         }
         } />
