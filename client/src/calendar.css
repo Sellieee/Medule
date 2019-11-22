@@ -113,3 +113,20 @@ tr {
     color: rgb(248, 161, 0);
     margin-right: 10px;
 }
+
+.ptheader{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+}
+
+.timebtn{
+    width: fit-content;
+    padding: 5px 20px;
+    background-color: rgb(248, 161, 0);
+    border: none;
+    color:white;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+}

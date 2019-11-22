@@ -13,7 +13,8 @@ import LoginForm from "./components/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GlobalStyle from "./Global";
 import ReactGoogleMapLoader from "react-google-maps-loader"
-// import Signedin from "./components/Signedin"
+import PtForm from "./components/PtForm"
+import Success from "./components/Success"
 
 const MY_API_KEY = "AIzaSyAi5FmO4ICcm5wSgSML69KMj4ebRXObtwY"
 
@@ -140,14 +141,19 @@ class App extends Component {
                   <Signup />}
               />
 
-              {/* <Route path="/signedin"
+              <Route path="/form"
                 render={() =>
-                  <Signedin />} */}
-              {/* /> */}
+                  <PtForm />}
+              />
 
               <Route path="/calendar"
                 render={() =>
                   <Calendar />}
+              />
+
+              <Route path="/success"
+                render={() =>
+                  <Success />}
               />
 
               {/* <button onClick={this.openModal}>Open Modal</button> */}

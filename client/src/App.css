@@ -188,3 +188,23 @@ font-size: 15px;
   align-items: center;
   justify-content: center;
 }
+
+.pt-form{
+  background-color: #add8e6;
+}
+
+.ptinfo {
+  width: 20px;
+}
+
+textarea {
+  height: 50px;
+  width: 300px;
+}
+
+.confirmation{
+  padding: 3% 15% 2% 15%;
+  color:red;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 45px;
+}
