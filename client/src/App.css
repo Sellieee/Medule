@@ -1,8 +1,9 @@
 .App {
   text-align: center;
-  background-image: url("./home.jpg");
+  /* background-image: url("./home.jpg"); */
   background-size: cover;  
   height: 100vh;
+  background-color: #add8e6;
 }
 
 /* .loginForm {
@@ -131,6 +132,18 @@ padding: 2px;}
   color:white;
   font-size: 20px;
   font-family: 'Bebas Neue', cursive;
+}
+
+.homebtn{
+  width: fit-content;
+  padding: 5px 20px;
+  background-color: rgb(248, 161, 0);
+  border: none;
+  color:white;
+  font-size: 20px;
+  font-family: 'Bebas Neue', cursive;
+  float: right;
+  margin-right: 8.5%; 
 }
 
 .authinput {

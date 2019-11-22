@@ -108,3 +108,8 @@ tr {
 .label-month {
     cursor: pointer;
 }
+
+.prev {
+    color: rgb(248, 161, 0);
+    margin-right: 10px;
+}

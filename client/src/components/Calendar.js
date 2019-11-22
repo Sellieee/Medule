@@ -232,21 +232,20 @@ export default class Calendar extends React.Component {
 
       return (
          <div>
-            <button class="authbtn">Go back</button>
             <br />
             <br />
             <div class="row">
-               <div class="col-sm-2"></div>
-               <div class="calendar-container col-sm-8" style={this.style}>
+               <div class="col-sm-1"></div>
+               <div class="calendar-container col-sm-10" style={this.style}>
                   <table className="calendar">
                      <thead>
                         <tr className="calendar-header">
-                           <td colSpan="7">
+                           <td colSpan="6">
                               <this.MonthNav />
                               {" "}
                               <this.YearNav />
                            </td>
-                           {/* <td colSpan="2" className="nav-month">
+                           <td colSpan="0.5" className="nav-month">
                               <i className="prev fa fa-fw fa-chevron-left"
                                  onClick={(e) => { this.prevMonth() }}>
                               </i>
@@ -254,7 +253,7 @@ export default class Calendar extends React.Component {
                                  onClick={(e) => { this.nextMonth() }}>
                               </i>
 
-                           </td> */}
+                           </td>
                         </tr>
                      </thead>
                      <tbody>
@@ -266,9 +265,9 @@ export default class Calendar extends React.Component {
                   </table>
                </div>
             </div>
-            <div class="col-sm-2"></div>
-
-         </div>
+            <button class="homebtn">Go back</button>
+            <div class="col-sm-1"></div>
+         </div >
 
 
       );
