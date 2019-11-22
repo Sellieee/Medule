@@ -1,21 +1,51 @@
-import React from "react";
+import React, { Component } from "react";
 import moment from "moment";
 import "../calendar.css";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from "react-modal";
+import "../App.css";
 
-export default class Calendar extends React.Component {
+const customStyles = {
+   content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)"
+   }
+};
+
+Modal.setAppElement("#root");
+
+
+export default class Calendar extends Component {
    state = {
       dateContext: moment(),
       today: moment(),
       showMonthPopup: false,
       showYearPopup: false,
-      selectedDay: null
+      selectedDay: null,
+      modalData: "",
+      modalIsOpen: false
    }
+
 
    constructor(props) {
       super(props);
       this.width = props.width || "80%";
       this.style = props.style || {};
       this.style.width = this.width; // add this
+      this.state = {
+         dateContext: moment(),
+         today: moment(),
+         showMonthPopup: false,
+         showYearPopup: false,
+         selectedDay: null,
+         modalData: "",
+         modalIsOpen: false
+      }
    }
 
 
@@ -166,9 +196,23 @@ export default class Calendar extends React.Component {
          selectedDay: day
       }, () => {
          console.log("SELECTED DAY: ", this.state.selectedDay);
+         this.openModal();
       });
 
       this.props.onDayClick && this.props.onDayClick(e, day);
+   }
+
+   openModal(data) {
+      this.setState({ modalIsOpen: true, modalData: data });
+
+   }
+
+   afterOpenModal() {
+      this.style.color = "#f00";
+   }
+
+   closeModal() {
+      this.setState({ modalIsOpen: false, modalData: "" })
    }
 
    render() {
@@ -232,6 +276,145 @@ export default class Calendar extends React.Component {
 
       return (
          <div>
+            <Modal class="ptmodal"
+               isOpen={this.state.modalIsOpen}
+               onAfterOpen={this.afterOpenModal}
+               onRequestClose={this.closeModal}
+               style={customStyles}
+               contentLabel="Example Modal"
+            >
+               <h2 class="drname" ref={subtitle => this.subtitle = subtitle}>Please fill in the form</h2>
+               <br />
+               <div class="drinfo">
+                  <form class="auth-form">
+                     <label class="authlabel">Title</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="title"
+                        placeholder="Ms/Miss/Mr/Mrs/Dr"
+                     />
+                     <label class="authlabel">First Name</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="firstname"
+                        placeholder="First Name"
+                     />
+                     <label class="authlabel">Surname</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="surname"
+                        placeholder="Surname"
+                     />
+                     <label class="authlabel">Date of Birth</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="dob"
+                        placeholder="DD/MM/YYYY"
+                     />
+                     <hr />
+                     <label class="authlabel">Address</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="address"
+                        placeholder="Address"
+                     />
+                     <label class="authlabel">Suburb</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="suburb"
+                        placeholder="Suburb"
+                     />
+                     <label class="authlabel">Postcode</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="postcode"
+                        placeholder="Postcode"
+                     />
+                     <hr />
+                     <label class="authlabel">Mobile Number</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="mobile"
+                        placeholder="Mobile Number"
+                     />
+                     <label class="authlabel">Home Number</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="home"
+                        placeholder="Home Number"
+                     />
+                     <hr />
+                     <label class="authlabel">Medicare Card Number</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="medicare"
+                        placeholder="Medicare Card Number"
+                     />
+                     <label class="authlabel">Expiry Date</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="expiry"
+                        placeholder="DD/MM/YYYY"
+                     />
+                     <hr />
+                     <label class="authlabel">Next of Kin</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="nok"
+                        placeholder="Next of Kin"
+                     />
+                     <label class="authlabel">Relationship</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="relationship"
+                        placeholder="Relationship"
+                     />
+                     <label class="authlabel">Contact Number</label>
+                     <input
+                        type="text"
+                        class="ptinfo"
+                        className="form-control"
+                        name="contact"
+                        placeholder="Contact Number"
+                     />
+                     <hr />
+                     <textarea class="ptinfo">Reason for Appointment</textarea>
+                  </form>
+               </div>
+               <Link to="/success">
+                  <button class="authbtn">Submit</button>
+               </Link>
+               <br />
+               <br />
+               <br />
+               <button class="closebtn" onClick={this.closeModal}>Close</button>
+            </Modal >
             <br />
             <br />
             <div class="row">
@@ -265,8 +448,10 @@ export default class Calendar extends React.Component {
                   </table>
                </div>
             </div>
-            <button class="homebtn">Go back</button>
             <div class="col-sm-1"></div>
+            <Link to="/">
+               <button class="homebtn">Go back</button>
+            </Link>
          </div >
 
 

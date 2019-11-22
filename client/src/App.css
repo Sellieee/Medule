@@ -182,3 +182,9 @@ font-size: 15px;
 .gmap {
   background-image: url("./home.jpg");
 }
+
+.ptmodal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
