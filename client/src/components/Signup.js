@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import form from "react-bootstrap/Form"
-import button from "react-bootstrap/Button"
 import "../App.css";
 
-const axiosInstance = axios.create({
-   baseURL: "http://localhost:8080"
-})
+const axiosInstance = axios.create({})
 
 class Signup extends Component {
    constructor() {
